@@ -26,11 +26,17 @@ body{
   transform: translateY(-3px);
 }
 
-.hand, .axis{
+.hand, .axis, .digital{
   top: 50%;
   background: black;
   position: absolute;
   z-index: 1;
+}
+
+.digital{
+  background: transparent;
+  right: 10%;
+  font-family: 'ds-digi';
 }
 
 .axis{

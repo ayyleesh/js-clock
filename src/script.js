@@ -17,6 +17,12 @@ function setTime() {
   const hours = now.getUTCHours();
   const hourDegrees = ((hours / 12) * 360) + ((mins / 60) * 30) + 90;
   hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+
+  if (seconds < 10) {
+      digitalClock.innerHTML = `${hours}:${mins}:0${seconds}`;
+  } else{
+    digitalClock.innerHTML = `${hours}:${mins}:${seconds}`;
+  }
 }
 
 
