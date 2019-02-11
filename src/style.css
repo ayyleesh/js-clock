@@ -1,0 +1,25 @@
+.clock{
+  width: 30rem;
+  height: 30rem;
+  border: 10px solid black;
+  border-radius: 50%;
+  position: relative;
+}
+
+.clock-face{
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.hand{
+  width: 50%;
+  height: 10px;
+  border-radius: 10px;
+  background: black;
+  top: 50%;
+  transform-origin: 100%;
+  position: absolute;
+  transform: rotate(90deg);
+}
