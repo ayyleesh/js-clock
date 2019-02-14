@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'ds-digi';
+  src: url('../font/DS-DIGI.TTF');
+}
+
+:root{
+  --base: #1d344e;
+  --primDark: #297e7c;
+  --primLight: #7fb1b2;
+  --secondDark: #92c46d;
+  --secondLight: #dceca9;
+}
+
+body{
+  background-color: var(--base) !important;
+  margin: 0;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.widget{
+  margin: 5% auto;
+}
+
+.clock{
+  width: 20rem;
+  height: 20rem;
+  border: 10px solid var(--primDark);
+  border-radius: 50%;
+  margin: auto;
+}
+
+.clock-face{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px);
+}
+
+.digital{
+  top: 75%;
+  left: 33%;
+  position: absolute;
+  text-align: center;
+  font-family: 'ds-digi';
+  font-size: 1.6rem;
+  color: var(--secondDark);
+  text-shadow: 0 0 10px var(--secondDark);
+  z-index: 0;
+}
+
+.axis{
+  top: 50%;
+  left: 45%;
+  width: 20px;
+  height: 20px;
+  background: var(--base);
+  border: solid 3px var(--primLight);
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(-5px);
+  z-index: 2;
+}
+
+.hand{
+  top: 50%;
+  right: 51%;
+  width: 45%;
+  height: 10px;
+  border-radius: 10px;
+  background: var(--primLight);
+  position: absolute !important;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  z-index: 1;
+}
+
+.second-hand{
+  height: 3px;
+  background: var(--secondLight);
+  transform: translateX(-10px);
+  z-index: 0;
+}
+
+.hour-hand{
+  width: 30%;
+}
+
+.date{
+  font-family: 'ds-digi';
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 25px;
+  color: var(--secondDark);
+  text-shadow: 0 0 8px var(--secondDark);
+}
+
+.widgetButton{
+  height: 3rem;
+  width: 5rem;
+  background: var(--base);
+  border: solid 2px var(--secondDark);
+  border-radius: 1.5rem;
+  padding: 0 10px;
+  margin: 10px 0;
+  font-size: 0.8rem;
+  color: var(--secondDark);
+  text-shadow: 0 0 1px var(--secondDark);
+  box-shadow: 0 0 5px var(--secondDark);
+}
+
+.widgetButton:hover{
+  background: var(--secondDark);
+  color: var(--base);
+  text-shadow: 0 0 1px var(--base);
+  cursor: pointer;
+}

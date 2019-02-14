@@ -2,22 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <title></title>
   </head>
   <body>
-    <div class="clock">
-      <div class="clock-face">
-        <div class="axis"></div>
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
-        <div class="digital"></div>
+    <div class="widget">
+      <div class="clock">
+        <div class="clock-face">
+          <div class="axis"></div>
+          <div class="hand hour-hand"></div>
+          <div class="hand min-hand"></div>
+          <div class="hand second-hand"></div>
+          <div class="digital"></div>
+        </div>
       </div>
-      <div class="date">Tue, 2 February 2018</div>
+      <div class="date"></div>
+      <!-- <div class="row">
+        <div class="offset-sm-8 col-sm-2">
+          <button class="widgetButton"><i class="material-icons">alarm</i></button>
+        </div>
+      </div> -->
+      <div class="alarm">
+        <input type="datetime-local" class="alarmTime">
+        <button onclick="setAlarm(this);" class="button alarmButton">set alarm</button>
+        <button onclick="stopAlarm();" class="stopButton" style="display: none">stop alarm</button>
+      </div>
     </div>
 
-  <script src="./src/script.js"></script>
+  <!-- <script src="./src/js/bootstrap.min.js"></script> -->
+  <script src="./src/js/script.js"></script>
   </body>
 </html>
