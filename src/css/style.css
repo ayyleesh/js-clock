@@ -118,3 +118,12 @@ body{
   text-shadow: 0 0 1px var(--base);
   cursor: pointer;
 }
+
+.modal-body{
+  background-color: var(--base);
+}
+
+.close {
+  color: #fff !important;
+  text-shadow: 0 1px 0 var(--secondDark) !important;
+}

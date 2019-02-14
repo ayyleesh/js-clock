@@ -73,7 +73,7 @@ function cancelAlarm(button) {
 }
 
 function initAlarm(){
-  alarmSound.play();
+  //alarmSound.play();
   document.querySelector('.stopButton').style.display = '';
 }
 

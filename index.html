@@ -20,19 +20,36 @@
         </div>
       </div>
       <div class="date"></div>
-      <!-- <div class="row">
-        <div class="offset-sm-8 col-sm-2">
-          <button class="widgetButton"><i class="material-icons">alarm</i></button>
+      <div class="row">
+        <div class="offset-sm-1 col-sm3">
+          <button class="widgetButton"><i class="material-icons">settings</i></button>
         </div>
-      </div> -->
-      <div class="alarm">
-        <input type="datetime-local" class="alarmTime">
-        <button onclick="setAlarm(this);" class="button alarmButton">set alarm</button>
-        <button onclick="stopAlarm();" class="stopButton" style="display: none">stop alarm</button>
+        <div class="offset-sm-4 col-sm-4">
+          <button class="widgetButton" data-toggle="modal" data-target="#exampleModal"><i class="material-icons">alarm</i></button>
+        </div>
       </div>
     </div>
 
-  <!-- <script src="./src/js/bootstrap.min.js"></script> -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="alarm">
+          <input type="datetime-local" class="alarmTime">
+          <button onclick="setAlarm(this);" class="button alarmButton">set alarm</button>
+          <button onclick="stopAlarm();" class="stopButton" style="display: none">stop alarm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="./src/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script src="./src/js/bootstrap.min.js"></script>
   <script src="./src/js/script.js"></script>
   </body>
 </html>
