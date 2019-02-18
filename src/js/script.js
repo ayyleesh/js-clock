@@ -4,6 +4,7 @@ const hourHand = document.querySelector('.hour-hand');
 const today = document.querySelector('.day');
 const todaysDate = document.querySelector('.date');
 const digitalClock = document.querySelector('.digital');
+var timePicker = document.querySelector('.customTime');
 
 const alarmSound = new Audio();
 alarmSound.src = './src/audio/alarm.mp3';
@@ -14,11 +15,10 @@ var startTime= new Date();
 
 function setTime() {
   const now = new Date();
-  var custom = document.querySelector('.customTime').valueAsNumber;
+  var custom = timePicker.valueAsNumber;
   var customTime = new Date(custom);
   var diff = now - startTime;
   customTime.setMilliseconds(customTime.getMilliseconds() + diff);
-  console.log(new Date() - now);
 
   if (isNaN(custom)) {
     seconds = now.getUTCSeconds();
@@ -39,7 +39,6 @@ function setTime() {
     year = customTime.getFullYear();
   }
 
-
   var days = ['Sun','Mon','Tue','Wed','Thur','Fri','Sat'];
 
   seconds = (seconds < 10) ? `0${seconds}` : seconds;
@@ -53,7 +52,7 @@ function setTime() {
 
   secondHand.style.setProperty('transform', `rotate(${((seconds / 60) * 360) + 90}deg)`);
   minsHand.style.setProperty('transform', `rotate(${((mins / 60) * 360) + 90}deg)`);
-  hourHand.style.setProperty('transform', `rotate(${((hours / 12) * 360) + 90}deg)`);
+  hourHand.style.setProperty('transform', `rotate(${((hours / 12) * 360) + ((mins / 60) * 30) + 90}deg)`);
 
   if(seconds==0){
     secondHand.style.transitionDuration = '0s';
@@ -67,6 +66,10 @@ function setTime() {
 
 }
 
+function resetTime() {
+  timePicker.value = '';
+}
+
 function setAlarm(button) {
   var ms = document.querySelector('.alarmTime').valueAsNumber;
   if(isNaN(ms)){
@@ -76,7 +79,13 @@ function setAlarm(button) {
 
   var alarm  = new Date(ms);
   var alarmTime = new Date(alarm.getFullYear(), alarm.getMonth(), alarm.getDate(), alarm.getHours(), alarm.getMinutes(), alarm.getSeconds());
-  var diff = alarmTime.getTime() - (new Date()).getTime();
+  var custom = timePicker.valueAsNumber;
+  if (true) {
+    var diff = alarmTime.getTime() - (new Date(custom)).getTime();
+  }
+  else{
+    var diff = alarmTime.getTime() - (new Date()).getTime();
+  }
 
   if (diff < 0) {
     alert('Time already passed!');
@@ -95,7 +104,7 @@ function cancelAlarm(button) {
 }
 
 function initAlarm(){
-  //alarmSound.play();
+  alarmSound.play();
   document.querySelector('.stopButton').style.display = '';
 }
 
