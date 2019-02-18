@@ -8,15 +8,37 @@ const digitalClock = document.querySelector('.digital');
 const alarmSound = new Audio();
 alarmSound.src = './src/audio/alarm.mp3';
 var alarmTimer;
+var seconds, mins, hours, day, date, month, year;
+
+var startTime= new Date();
 
 function setTime() {
   const now = new Date();
+  var custom = document.querySelector('.customTime').valueAsNumber;
+  var customTime = new Date(custom);
+  var diff = now - startTime;
+  customTime.setMilliseconds(customTime.getMilliseconds() + diff);
+  console.log(new Date() - now);
 
-  var seconds = now.getUTCSeconds();
-  var mins = now.getUTCMinutes();
-  var hours = now.getUTCHours();
-  var date = now.getUTCDate();
-  var month = now.getUTCMonth();
+  if (isNaN(custom)) {
+    seconds = now.getUTCSeconds();
+    mins = now.getUTCMinutes();
+    hours = now.getUTCHours();
+    day = now.getDay();
+    date = now.getUTCDate();
+    month = now.getUTCMonth();
+    year = now.getUTCFullYear();
+  } else {
+
+    seconds = customTime.getSeconds();
+    mins = customTime.getMinutes();
+    hours = customTime.getHours();
+    day = customTime.getDay();
+    date = customTime.getDate();
+    month = customTime.getMonth();
+    year = customTime.getFullYear();
+  }
+
 
   var days = ['Sun','Mon','Tue','Wed','Thur','Fri','Sat'];
 
@@ -27,7 +49,7 @@ function setTime() {
   month = (month < 10) ? `0${month + 1}` : month + 1;
 
   digitalClock.innerHTML = `${hours} : ${mins} : ${seconds}`;
-  todaysDate.innerHTML = `${days[now.getDay()]}, ${date}-${month}-${now.getFullYear()}`;
+  todaysDate.innerHTML = `${days[day]}, ${date}-${month}-${year}`;
 
   secondHand.style.setProperty('transform', `rotate(${((seconds / 60) * 360) + 90}deg)`);
   minsHand.style.setProperty('transform', `rotate(${((mins / 60) * 360) + 90}deg)`);
@@ -83,6 +105,7 @@ function stopAlarm() {
   document.querySelector('.stopButton').style.display = 'none';
   cancelAlarm(document.querySelector('.alarmButton'));
 }
+
 
 setInterval(setTime, 1000);
 setTime();

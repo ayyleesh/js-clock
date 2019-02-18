@@ -22,16 +22,16 @@
       <div class="date"></div>
       <div class="row">
         <div class="offset-sm-1 col-sm3">
-          <button class="widgetButton"><i class="material-icons">settings</i></button>
+          <button class="widgetButton" data-toggle="modal" data-target="#modal-setting"><i class="material-icons">settings</i></button>
         </div>
         <div class="offset-sm-4 col-sm-4">
-          <button class="widgetButton" data-toggle="modal" data-target="#exampleModal"><i class="material-icons">alarm</i></button>
+          <button class="widgetButton" data-toggle="modal" data-target="#modal-alarm"><i class="material-icons">alarm</i></button>
         </div>
       </div>
     </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="modal-alarm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
@@ -42,6 +42,23 @@
           <input type="datetime-local" class="alarmTime">
           <button onclick="setAlarm(this);" class="button alarmButton">set alarm</button>
           <button onclick="stopAlarm();" class="stopButton" style="display: none">stop alarm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-setting" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="setting">
+          <input type="datetime-local" class="customTime">
+          <button onclick="setTime(this);" class="button setButton">set time</button>
+          <button onclick="resetTime();" class="resetButton">reset time</button>
         </div>
       </div>
     </div>
