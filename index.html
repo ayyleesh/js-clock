@@ -2,10 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./src/css/nucleo-icons.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/css/blk-design-system.min.css">
     <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <script src="./src/js/core/jquery.min.js" charset="utf-8"></script>
     <title></title>
   </head>
   <body>
@@ -20,53 +25,75 @@
         </div>
       </div>
       <div class="date"></div>
-      <div class="row">
-        <div class="offset-sm-1 col-sm3">
-          <button class="widgetButton" data-toggle="modal" data-target="#modal-setting"><i class="material-icons">settings</i></button>
-        </div>
-        <div class="offset-sm-4 col-sm-4">
-          <button class="widgetButton" data-toggle="modal" data-target="#modal-alarm"><i class="material-icons">alarm</i></button>
+      <ul class="nav nav-pills nav-pills-success nav-pills-icons  justify-content-center" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" href="#schedule-1" role="tab" data-toggle="modal" data-target="#modal-setting">
+            <i class="tim-icons icon-settings-gear-63"></i>
+            Setting
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#tasks-1" role="tab" data-toggle="modal" data-target="#modal-alarm">
+            <i class="tim-icons icon-time-alarm"></i>
+            Alarm
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="modal fade" id="modal-alarm" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <i class="tim-icons icon-simple-remove text-white"></i>
+            </button>
+            <h5>set time</h5>
+          </div>
+          <div class="alarm">
+            <div class="modal-body">
+              <input type="datetime-local" class="alarmTime">
+              <!-- <input type="text" class="form-control datepicker alarmTime"> -->
+            </div>
+            <div class="modal-footer">
+              <button onclick="setAlarm(this);" class="btn btn-primary alarmButton">set alarm</button>
+              <button onclick="stopAlarm();" class="btn btn-warning stopButton" style="display: none">stop alarm</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-
-<div class="modal fade" id="modal-alarm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="alarm">
-          <input type="datetime-local" class="alarmTime">
-          <button onclick="setAlarm(this);" class="button alarmButton">set alarm</button>
-          <button onclick="stopAlarm();" class="stopButton" style="display: none">stop alarm</button>
+  <div class="modal fade" id="modal-setting" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <i class="tim-icons icon-simple-remove text-white"></i>
+          </button>
+          <h5>set time</h5>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modal-setting" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
         <div class="setting">
-          <input type="datetime-local" class="customTime">
-          <button onclick="setCustomTime(this);" class="button setButton">set time</button>
-          <button onclick="resetTime();" class="resetButton">reset time</button>
+          <div class="modal-body">
+            <input type="datetime-local" class="customTime">
+          </div>
+          <div class="modal-footer">
+            <button onclick="setCustomTime(this);" class="btn btn-link btn-success setButton" data-dismiss="modal">set time</button>
+            <button onclick="resetTime();" class="btn btn-link btn-warning resetButton">reset time</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-  <script src="./src/js/jquery-3.3.1.min.js" charset="utf-8"></script>
-  <script src="./src/js/bootstrap.min.js"></script>
+  <script src="./src/js/core/popper.min.js" charset="utf-8"></script>
+  <script src="./src/js/core/bootstrap.min.js"></script>
+
+  <script src="./src/js/plugins/moment.min.js"></script>
+  <script src="./src/js/plugins/bootstrap-datetimepicker.js" charset="utf-8"></script>
+
+  <script src="./src/js/blk-design-system.min.js" charset="utf-8"></script>
   <script src="./src/js/script.js"></script>
   </body>
 </html>

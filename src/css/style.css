@@ -4,10 +4,10 @@
 }
 
 :root{
-  --base: #1d344e;
-  --primDark: #297e7c;
+  --base: #171941;
+  --primDark: #009fec;
   --primLight: #7fb1b2;
-  --secondDark: #92c46d;
+  --secondDark: #00f2c3;
   --secondLight: #dceca9;
 }
 
@@ -119,8 +119,12 @@ body{
   cursor: pointer;
 }
 
-.modal-body{
-  background-color: var(--base);
+.modal-content{
+  background-color: var(--base) !important;
+}
+
+.modal-dialog{
+  max-width: 300px !important;
 }
 
 .close {
