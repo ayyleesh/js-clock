@@ -89,7 +89,7 @@ body{
   width: 30%;
 }
 
-.date{
+.date, .temp{
   font-family: 'ds-digi';
   font-size: 3rem;
   text-align: center;
@@ -98,25 +98,13 @@ body{
   text-shadow: 0 0 8px var(--secondDark);
 }
 
-.widgetButton{
-  height: 3rem;
-  width: 5rem;
-  background: var(--base);
-  border: solid 2px var(--secondDark);
-  border-radius: 1.5rem;
-  padding: 0 10px;
-  margin: 10px 0;
-  font-size: 0.8rem;
-  color: var(--secondDark);
-  text-shadow: 0 0 1px var(--secondDark);
-  box-shadow: 0 0 5px var(--secondDark);
+.temp{
+  font-size: 2rem;
+  margin: auto 0;
 }
 
-.widgetButton:hover{
-  background: var(--secondDark);
-  color: var(--base);
-  text-shadow: 0 0 1px var(--base);
-  cursor: pointer;
+.icon{
+  margin: 0 20px;
 }
 
 .modal-content{
