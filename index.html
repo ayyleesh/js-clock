@@ -53,11 +53,10 @@
           </div>
           <div class="alarm">
             <div class="modal-body">
-              <input type="datetime-local" class="alarmTime">
-              <!-- <input type="text" class="form-control datepicker alarmTime"> -->
+              <input type="datetime-local" class="form-control alarmTime">
             </div>
             <div class="modal-footer">
-              <button onclick="setAlarm(this);" class="btn btn-primary alarmButton">set alarm</button>
+              <button onclick="setAlarm(this);" class="btn btn-success alarmButton">set alarm</button>
               <button onclick="stopAlarm();" class="btn btn-warning stopButton" style="display: none">stop alarm</button>
             </div>
           </div>
@@ -76,7 +75,17 @@
         </div>
         <div class="setting">
           <div class="modal-body">
-            <input type="datetime-local" class="customTime">
+            <div class="form-group">
+              <label for="time">Modify time</label>
+              <input type="datetime-local" class="form-control customTime">
+              <!-- <label for="timezone">Modify timezone</label>
+              <select class="form-control customTimezone">
+                <option value="1">GMT+00: Dublin, Edinburgh, Lisbon, London</option>
+                <option value="2">GMT+01: Berlin,Budapest, Paris</option>
+                <option value="">GMT+10: Brisbane, Sydney, Vladivostok</option>
+                <option value="">GMT-05: New York, Toronto</option>
+              </select> -->
+            </div>
           </div>
           <div class="modal-footer">
             <button onclick="setCustomTime(this);" class="btn btn-link btn-success setButton" data-dismiss="modal">set time</button>

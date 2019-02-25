@@ -90,7 +90,7 @@ function setAlarm(button) {
   if (diff < 0) {
     alert('Time already passed!');
     return;
-  } 
+  }
 
   alarmTimer = setTimeout(initAlarm, diff);
   button.innerText ='cancel alarm';
@@ -106,7 +106,6 @@ function cancelAlarm(button) {
 function initAlarm(){
   alarmSound.play();
   document.querySelector('.stopButton').style.display = '';
-
 }
 
 function stopAlarm() {
@@ -114,25 +113,8 @@ function stopAlarm() {
   alarmSound.curentTime = 0;
   document.querySelector('.stopButton').style.display = 'none';
   cancelAlarm(document.querySelector('.alarmButton'));
-
 }
 
-$(function(){
-
-$('.datepicker').datetimepicker({
-  icons: {
-      time: "fa fa-clock-o",
-      date: "fa fa-calendar",
-      up: "fa fa-chevron-up",
-      down: "fa fa-chevron-down",
-      previous: 'fa fa-chevron-left',
-      next: 'fa fa-chevron-right',
-      today: 'fa fa-screenshot',
-      clear: 'fa fa-trash',
-      close: 'fa fa-remove'
-  }
-});
-});
 
 setInterval(setTime, 1000);
 setTime();
