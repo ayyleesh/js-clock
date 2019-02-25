@@ -105,6 +105,9 @@ body{
 
 .icon{
   margin: 0 20px;
+  width: 25px;
+  height: 25px;
+  text-shadow: 0 0 8px var(--secondDark);
 }
 
 .modal-content{
