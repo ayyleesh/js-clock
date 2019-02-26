@@ -26,17 +26,11 @@ body{
 .clock{
   width: 20rem;
   height: 20rem;
-  border: 10px solid var(--primDark);
-  border-radius: 50%;
+  background: url('../img/clock.svg');
   margin: auto;
+  position: relative;
 }
 
-.clock-face{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform: translateY(-3px);
-}
 
 .digital{
   top: 75%;
@@ -50,43 +44,36 @@ body{
   z-index: 0;
 }
 
-.axis{
-  top: 50%;
-  left: 45%;
-  width: 20px;
-  height: 20px;
-  background: var(--base);
-  border: solid 3px var(--primLight);
-  border-radius: 50%;
-  position: absolute;
-  transform: translateY(-5px);
-  z-index: 2;
-}
-
 .hand{
+  position: absolute;
   top: 50%;
-  right: 51%;
-  width: 45%;
-  height: 10px;
-  border-radius: 10px;
-  background: var(--primLight);
-  position: absolute !important;
-  transform-origin: 100%;
-  transform: rotate(90deg);
+  left: 25%;
+  width: 10rem;
+  height: 10rem;
+  padding-bottom: 20px;
+  transform-origin: top;
   transition: all 0.05s;
   transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
   z-index: 1;
 }
 
 .second-hand{
-  height: 3px;
-  background: var(--secondLight);
-  transform: translateX(-10px);
   z-index: 0;
 }
 
 .hour-hand{
-  width: 30%;
+  height: 7rem;
+}
+
+.axis{
+  top: 50%;
+  left: 47%;
+  width: 20px;
+  height: 20px;
+  background: url('../img/axis.svg');
+  position: absolute;
+  transform: translateY(-10px);
+  z-index: 2;
 }
 
 .date, .temp{

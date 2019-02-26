@@ -50,9 +50,9 @@ function setTime() {
   digitalClock.innerHTML = `${hours} : ${mins} : ${seconds}`;
   todaysDate.innerHTML = `${days[day]}, ${date}-${month}-${year}`;
 
-  secondHand.style.setProperty('transform', `rotate(${((seconds / 60) * 360) + 90}deg)`);
-  minsHand.style.setProperty('transform', `rotate(${((mins / 60) * 360) + 90}deg)`);
-  hourHand.style.setProperty('transform', `rotate(${((hours / 12) * 360) + ((mins / 60) * 30) + 90}deg)`);
+  secondHand.style.setProperty('transform', `rotate(${((seconds / 60) * 360) + 180}deg)`);
+  minsHand.style.setProperty('transform', `rotate(${((mins / 60) * 360) + 180}deg)`);
+  hourHand.style.setProperty('transform', `rotate(${((hours / 12) * 360) + ((mins / 60) * 30) + 180}deg)`);
 
   if(seconds==0){
     secondHand.style.transitionDuration = '0s';
