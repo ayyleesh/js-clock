@@ -29,7 +29,6 @@ function setTime() {
     month = now.getUTCMonth();
     year = now.getUTCFullYear();
   } else {
-
     seconds = customTime.getSeconds();
     mins = customTime.getMinutes();
     hours = customTime.getHours();
@@ -80,11 +79,12 @@ function setAlarm(button) {
   var alarm  = new Date(ms);
   var alarmTime = new Date(alarm.getFullYear(), alarm.getMonth(), alarm.getDate(), alarm.getHours(), alarm.getMinutes(), alarm.getSeconds());
   var custom = timePicker.valueAsNumber;
+  var overtime = (new Date().getTime() - startTime);
   if (isNaN(custom)) {
     var diff = alarmTime.getTime() - (new Date()).getTime();
   }
   else{
-    var diff = alarmTime.getTime() - (new Date(custom)).getTime();
+    var diff = alarmTime.getTime() - (new Date(custom)).getTime() - overtime;
   }
 
   if (diff < 0) {

@@ -26,14 +26,14 @@ body{
 .clock{
   width: 20rem;
   height: 20rem;
-  background: url('../img/clock.svg');
+  background: url('../img/clock-num-01.svg');
   margin: auto;
   position: relative;
 }
 
 
 .digital{
-  top: 75%;
+  top: 70%;
   left: 33%;
   position: absolute;
   text-align: center;
